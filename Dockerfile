@@ -15,6 +15,7 @@ RUN yum update -y \
         php71u-mysqlnd \
         php71u-xml \
         php71u-json \
+        php71u-enchant \
         php71u-intl \
     && yum clean all && yum history new
 
