@@ -3,6 +3,8 @@ MAINTAINER madebymode
 
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN rpm -Uvh https://repo.ius.io/ius-release-el7.rpm
+#php71u is archived
+RUN yum-config-manager --enable ius-archive
 
 # Update and install latest packages and prerequisites
 RUN yum update -y \
