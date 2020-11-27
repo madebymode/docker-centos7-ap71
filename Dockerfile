@@ -18,7 +18,11 @@ RUN yum update -y \
         php71u-xml \
         php71u-json \
         php71u-intl \
+        zip \
+        unzip \
     && yum clean all && yum history new
+    
+RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.17 --install-dir=/usr/local/bin --filename=composer
 
 RUN sed -e 's/127.0.0.1:9000/9000/' \
         -e '/allowed_clients/d' \
