@@ -51,13 +51,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Enable php fpm status page
 RUN echo "pm.status_path = /status" >> /etc/php-fpm.d/zz-status-page.conf
 
-#health check
+#health check - enable in compose files
 COPY ./php-fpm-healthcheck /usr/local/bin/
 RUN chmod +x /usr/local/bin/php-fpm-healthcheck
-
-HEALTHCHECK --interval=12s --timeout=12s --start-period=30s \
-    CMD php-fpm-healthcheck
-
 
 RUN echo 'Creating notroot docker user and group from host' && \
     groupadd -g $HOST_USER_GID docker && \
