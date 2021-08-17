@@ -30,6 +30,7 @@ RUN yum update -y \
         sudo \
         mysql \
         fcgi-devel \
+        sendmail \
     && yum clean all && yum history new
 
 RUN sed -e 's/127.0.0.1:9000/9000/' \
