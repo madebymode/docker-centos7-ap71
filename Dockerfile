@@ -20,6 +20,7 @@ RUN yum update -y \
         php71u-intl \
         zip \
         unzip \
+        sendmail \
     && yum clean all && yum history new
     
 RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.22 --install-dir=/usr/local/bin --filename=composer
