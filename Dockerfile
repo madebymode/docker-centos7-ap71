@@ -21,6 +21,7 @@ RUN yum update -y \
         php71u-xml \
         php71u-json \
         php71u-intl \
+        php71u-mcrypt \
         zip \
         unzip \
         git \
