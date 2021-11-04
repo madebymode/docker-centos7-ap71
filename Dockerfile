@@ -19,6 +19,7 @@ RUN yum update -y \
         php71u-json \
         php71u-intl \
         php71u-mcrypt \
+        php71u-bcmath \
         zip \
         unzip \
         sendmail \
