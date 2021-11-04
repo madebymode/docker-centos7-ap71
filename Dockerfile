@@ -24,7 +24,10 @@ RUN yum update -y \
         sendmail \
     && yum clean all && yum history new
     
+#composer 1.10
 RUN curl -sS https://getcomposer.org/installer | php -- --version=1.10.22 --install-dir=/usr/local/bin --filename=composer
+#composer 2
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer2
 
 RUN sed -e 's/127.0.0.1:9000/9000/' \
         -e '/allowed_clients/d' \
